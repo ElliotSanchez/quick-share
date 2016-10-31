@@ -10,7 +10,7 @@
         <scene sceneID="HgA-fe-FcA">
             <objects>
                 <navigationController id="Cin-G5-StH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNE-eR-Aoe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNE-eR-Aoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,16 +36,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQM-0k-D9g">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQM-0k-D9g">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" id="etJ-ae-Pdt">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="160" id="etJ-ae-Pdt" customClass="MyTableViewCell" customModule="Quick_Share" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etJ-ae-Pdt" id="fkX-JI-hMf">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-JW-WDF"/>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1FM-JW-WDF" firstAttribute="leading" secondItem="fkX-JI-hMf" secondAttribute="leading" id="Ck2-1C-nca"/>
+                                                <constraint firstAttribute="bottom" secondItem="1FM-JW-WDF" secondAttribute="bottom" id="F9S-YE-A2I"/>
+                                                <constraint firstAttribute="trailing" secondItem="1FM-JW-WDF" secondAttribute="trailing" id="Fsr-dt-38F"/>
+                                                <constraint firstItem="1FM-JW-WDF" firstAttribute="top" secondItem="fkX-JI-hMf" secondAttribute="top" id="XcN-zr-A05"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImageView" destination="1FM-JW-WDF" id="rdL-k2-2Kd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
