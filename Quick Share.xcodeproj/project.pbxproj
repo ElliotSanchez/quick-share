@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */; };
+		F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A71DC7A9FA0072A88E /* ViewController.swift */; };
+		F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43C32A91DC7A9FA0072A88E /* Main.storyboard */; };
+		F43C32AD1DC7A9FA0072A88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */; };
+		F43C32B01DC7A9FA0072A88E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */; };
+		F43C32BB1DC7A9FA0072A88E /* Quick_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32BA1DC7A9FA0072A88E /* Quick_ShareTests.swift */; };
+		F43C32C61DC7A9FA0072A88E /* Quick_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F43C32B71DC7A9FA0072A88E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F43C329A1DC7A9FA0072A88E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43C32A11DC7A9FA0072A88E;
+			remoteInfo = "Quick Share";
+		};
+		F43C32C21DC7A9FA0072A88E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F43C329A1DC7A9FA0072A88E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F43C32A11DC7A9FA0072A88E;
+			remoteInfo = "Quick Share";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F43C32A21DC7A9FA0072A88E /* Quick Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F43C32A71DC7A9FA0072A88E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F43C32AA1DC7A9FA0072A88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F43C32AF1DC7A9FA0072A88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F43C32B11DC7A9FA0072A88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43C32B61DC7A9FA0072A88E /* Quick ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quick ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43C32BA1DC7A9FA0072A88E /* Quick_ShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick_ShareTests.swift; sourceTree = "<group>"; };
+		F43C32BC1DC7A9FA0072A88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43C32C11DC7A9FA0072A88E /* Quick ShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quick ShareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick_ShareUITests.swift; sourceTree = "<group>"; };
+		F43C32C71DC7A9FA0072A88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F43C329F1DC7A9FA0072A88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32B31DC7A9FA0072A88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32BE1DC7A9FA0072A88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F43C32991DC7A9FA0072A88E = {
+			isa = PBXGroup;
+			children = (
+				F43C32A41DC7A9FA0072A88E /* Quick Share */,
+				F43C32B91DC7A9FA0072A88E /* Quick ShareTests */,
+				F43C32C41DC7A9FA0072A88E /* Quick ShareUITests */,
+				F43C32A31DC7A9FA0072A88E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F43C32A31DC7A9FA0072A88E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F43C32A21DC7A9FA0072A88E /* Quick Share.app */,
+				F43C32B61DC7A9FA0072A88E /* Quick ShareTests.xctest */,
+				F43C32C11DC7A9FA0072A88E /* Quick ShareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F43C32A41DC7A9FA0072A88E /* Quick Share */ = {
+			isa = PBXGroup;
+			children = (
+				F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */,
+				F43C32A71DC7A9FA0072A88E /* ViewController.swift */,
+				F43C32A91DC7A9FA0072A88E /* Main.storyboard */,
+				F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */,
+				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
+				F43C32B11DC7A9FA0072A88E /* Info.plist */,
+			);
+			path = "Quick Share";
+			sourceTree = "<group>";
+		};
+		F43C32B91DC7A9FA0072A88E /* Quick ShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				F43C32BA1DC7A9FA0072A88E /* Quick_ShareTests.swift */,
+				F43C32BC1DC7A9FA0072A88E /* Info.plist */,
+			);
+			path = "Quick ShareTests";
+			sourceTree = "<group>";
+		};
+		F43C32C41DC7A9FA0072A88E /* Quick ShareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */,
+				F43C32C71DC7A9FA0072A88E /* Info.plist */,
+			);
+			path = "Quick ShareUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F43C32A11DC7A9FA0072A88E /* Quick Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43C32CA1DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick Share" */;
+			buildPhases = (
+				F43C329E1DC7A9FA0072A88E /* Sources */,
+				F43C329F1DC7A9FA0072A88E /* Frameworks */,
+				F43C32A01DC7A9FA0072A88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quick Share";
+			productName = "Quick Share";
+			productReference = F43C32A21DC7A9FA0072A88E /* Quick Share.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F43C32B51DC7A9FA0072A88E /* Quick ShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43C32CD1DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareTests" */;
+			buildPhases = (
+				F43C32B21DC7A9FA0072A88E /* Sources */,
+				F43C32B31DC7A9FA0072A88E /* Frameworks */,
+				F43C32B41DC7A9FA0072A88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F43C32B81DC7A9FA0072A88E /* PBXTargetDependency */,
+			);
+			name = "Quick ShareTests";
+			productName = "Quick ShareTests";
+			productReference = F43C32B61DC7A9FA0072A88E /* Quick ShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F43C32C01DC7A9FA0072A88E /* Quick ShareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F43C32D01DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareUITests" */;
+			buildPhases = (
+				F43C32BD1DC7A9FA0072A88E /* Sources */,
+				F43C32BE1DC7A9FA0072A88E /* Frameworks */,
+				F43C32BF1DC7A9FA0072A88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F43C32C31DC7A9FA0072A88E /* PBXTargetDependency */,
+			);
+			name = "Quick ShareUITests";
+			productName = "Quick ShareUITests";
+			productReference = F43C32C11DC7A9FA0072A88E /* Quick ShareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F43C329A1DC7A9FA0072A88E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = notungood;
+				TargetAttributes = {
+					F43C32A11DC7A9FA0072A88E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KNYX5GL2V8;
+						ProvisioningStyle = Automatic;
+					};
+					F43C32B51DC7A9FA0072A88E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KNYX5GL2V8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F43C32A11DC7A9FA0072A88E;
+					};
+					F43C32C01DC7A9FA0072A88E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KNYX5GL2V8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F43C32A11DC7A9FA0072A88E;
+					};
+				};
+			};
+			buildConfigurationList = F43C329D1DC7A9FA0072A88E /* Build configuration list for PBXProject "Quick Share" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F43C32991DC7A9FA0072A88E;
+			productRefGroup = F43C32A31DC7A9FA0072A88E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F43C32A11DC7A9FA0072A88E /* Quick Share */,
+				F43C32B51DC7A9FA0072A88E /* Quick ShareTests */,
+				F43C32C01DC7A9FA0072A88E /* Quick ShareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F43C32A01DC7A9FA0072A88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43C32B01DC7A9FA0072A88E /* LaunchScreen.storyboard in Resources */,
+				F43C32AD1DC7A9FA0072A88E /* Assets.xcassets in Resources */,
+				F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32B41DC7A9FA0072A88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32BF1DC7A9FA0072A88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F43C329E1DC7A9FA0072A88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */,
+				F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32B21DC7A9FA0072A88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43C32BB1DC7A9FA0072A88E /* Quick_ShareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43C32BD1DC7A9FA0072A88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43C32C61DC7A9FA0072A88E /* Quick_ShareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F43C32B81DC7A9FA0072A88E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43C32A11DC7A9FA0072A88E /* Quick Share */;
+			targetProxy = F43C32B71DC7A9FA0072A88E /* PBXContainerItemProxy */;
+		};
+		F43C32C31DC7A9FA0072A88E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F43C32A11DC7A9FA0072A88E /* Quick Share */;
+			targetProxy = F43C32C21DC7A9FA0072A88E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F43C32A91DC7A9FA0072A88E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43C32AA1DC7A9FA0072A88E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F43C32AF1DC7A9FA0072A88E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F43C32C81DC7A9FA0072A88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F43C32C91DC7A9FA0072A88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F43C32CB1DC7A9FA0072A88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F43C32CC1DC7A9FA0072A88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F43C32CE1DC7A9FA0072A88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick ShareTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quick Share.app/Quick Share";
+			};
+			name = Debug;
+		};
+		F43C32CF1DC7A9FA0072A88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick ShareTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quick Share.app/Quick Share";
+			};
+			name = Release;
+		};
+		F43C32D11DC7A9FA0072A88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick ShareUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-ShareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Quick Share";
+			};
+			name = Debug;
+		};
+		F43C32D21DC7A9FA0072A88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KNYX5GL2V8;
+				INFOPLIST_FILE = "Quick ShareUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-ShareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Quick Share";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F43C329D1DC7A9FA0072A88E /* Build configuration list for PBXProject "Quick Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43C32C81DC7A9FA0072A88E /* Debug */,
+				F43C32C91DC7A9FA0072A88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F43C32CA1DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43C32CB1DC7A9FA0072A88E /* Debug */,
+				F43C32CC1DC7A9FA0072A88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F43C32CD1DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43C32CE1DC7A9FA0072A88E /* Debug */,
+				F43C32CF1DC7A9FA0072A88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F43C32D01DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F43C32D11DC7A9FA0072A88E /* Debug */,
+				F43C32D21DC7A9FA0072A88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F43C329A1DC7A9FA0072A88E /* Project object */;
+}
