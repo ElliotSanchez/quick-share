@@ -10,10 +10,10 @@
         <scene sceneID="HgA-fe-FcA">
             <objects>
                 <navigationController id="Cin-G5-StH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNE-eR-Aoe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNE-eR-Aoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
@@ -57,6 +57,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="myImageView" destination="1FM-JW-WDF" id="rdL-k2-2Kd"/>
+                                            <segue destination="Qxc-qX-Vug" kind="show" id="ZU2-xs-GST"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,6 +78,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yan-pO-BF0">
+            <objects>
+                <viewController id="Qxc-qX-Vug" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jKP-eq-EU2"/>
+                        <viewControllerLayoutGuide type="bottom" id="grs-yN-FM4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rt6-Fz-6Nw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caU-1G-faz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="139"/>
         </scene>
     </scenes>
 </document>
