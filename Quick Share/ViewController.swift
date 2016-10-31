@@ -26,6 +26,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
     }
 
+    // Called anytime we are about to navigate away from current view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if (id == "showFullImageSegue") {
+                let newVc = segue.destination as! ShowImageViewController
+                newVc.passedString = "we passed the data"
+            }
+        }
+    }
     
     //////////////////////////////////////////////
     // UITableViewDataSource REQUIRED FUNCTIONS //
