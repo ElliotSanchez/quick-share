@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import Photos
 
 class ShowImageViewController: UIViewController {
 
-    // String for testing to see if we are receiving data from clicks correctly
-    var passedString = String()
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var asset: PHAsset?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        // Print passedString to confirm that we've received data correctly on load.
-        print(passedString)
-        
+        if let myAsset = asset {
+            PHImageManager.default().requestImage(
+                for: myAsset,
+                targetSize: CGSize(
+                    width: self.view.frame.width,
+                    height: self.view.frame.width),
+                contentMode: .aspectFill,
+                options: nil,
+                resultHandler: { (result, info) in
+                    if let image = result {
+                        self.imageView.image = image
+                    }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {

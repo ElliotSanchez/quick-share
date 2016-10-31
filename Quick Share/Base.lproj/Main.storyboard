@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -90,12 +92,27 @@
                     <view key="view" contentMode="scaleToFill" id="rt6-Fz-6Nw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Jf-2X-sBp">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Jf-2X-sBp" secondAttribute="height" multiplier="343:274" id="Vaa-J7-yog"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Jf-2X-sBp" secondAttribute="trailing" id="Tgf-19-xUQ"/>
+                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="top" secondItem="jKP-eq-EU2" secondAttribute="bottom" id="VWo-zu-P9i"/>
+                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="leading" secondItem="rt6-Fz-6Nw" secondAttribute="leadingMargin" id="yol-bT-Ws9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="9Jf-2X-sBp" id="SL8-fU-Lfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caU-1G-faz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="139"/>
+            <point key="canvasLocation" x="1032.8" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
