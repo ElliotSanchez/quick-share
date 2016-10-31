@@ -51,7 +51,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let id = segue.identifier {
             if (id == "showFullImageSegue") {
                 let newVc = segue.destination as! ShowImageViewController
-                newVc.passedString = "we passed the data"
+               
+                // define indexPath since it isn't passed explicitly to prepare(for segue)
+                var indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
+                
+                if let asset = self.photos?[(indexPath?.row)!] {
+                    newVc.asset = asset
+                }
             }
         }
     }
