@@ -14,6 +14,7 @@
 		F43C32B01DC7A9FA0072A88E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */; };
 		F43C32BB1DC7A9FA0072A88E /* Quick_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32BA1DC7A9FA0072A88E /* Quick_ShareTests.swift */; };
 		F43C32C61DC7A9FA0072A88E /* Quick_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */; };
+		F43C32D41DC7ABB70072A88E /* images in Resources */ = {isa = PBXBuildFile; fileRef = F43C32D31DC7ABB70072A88E /* images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F43C32C11DC7A9FA0072A88E /* Quick ShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quick ShareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick_ShareUITests.swift; sourceTree = "<group>"; };
 		F43C32C71DC7A9FA0072A88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F43C32D31DC7ABB70072A88E /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		F43C32A41DC7A9FA0072A88E /* Quick Share */ = {
 			isa = PBXGroup;
 			children = (
+				F43C32D31DC7ABB70072A88E /* images */,
 				F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */,
 				F43C32A71DC7A9FA0072A88E /* ViewController.swift */,
 				F43C32A91DC7A9FA0072A88E /* Main.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43C32D41DC7ABB70072A88E /* images in Resources */,
 				F43C32B01DC7A9FA0072A88E /* LaunchScreen.storyboard in Resources */,
 				F43C32AD1DC7A9FA0072A88E /* Assets.xcassets in Resources */,
 				F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */,
