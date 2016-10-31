@@ -46,7 +46,7 @@
                                             <frame key="frameInset" width="375" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-JW-WDF"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-JW-WDF"/>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1FM-JW-WDF" firstAttribute="leading" secondItem="fkX-JI-hMf" secondAttribute="leading" id="Ck2-1C-nca"/>
