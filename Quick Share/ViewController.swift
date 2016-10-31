@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Photos
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    // Class level variables to store the photos
+    var assetCollection: PHAssetCollection?
+    var photos: PHFetchResult<PHAsset>?
+    
     @IBOutlet weak var tableView: UITableView!
     
     let reuseIdentifier = "tableViewCell"
@@ -24,6 +29,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Set the data source and delegated responder for our tableView as this viewController class, aka, self
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Get the photos and put them in the class level variables created earlier
+        let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        
+        if (collection.firstObject != nil) {
+            self.assetCollection = collection.firstObject!
+            
+            let options = PHFetchOptions()
+            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+            options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+            
+            self.photos = PHAsset.fetchAssets(in: assetCollection!, options: options)
+        } else {
+            print("No photos found during viewDidLoad")
+        }
     }
 
     // Called anytime we are about to navigate away from current view
@@ -43,8 +63,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MyTableViewCell
         
-        cell.myImageView.image = #imageLiteral(resourceName: "polaroid")
-        //cell.textLabel?.text = dummyObjects[indexPath.row]
+        if let asset = self.photos?[indexPath.row] {
+            PHImageManager.default().requestImage(for: asset, targetSize: CGSize(width: 320, height: 240), contentMode: .aspectFill, options: nil, resultHandler: { (result, info) in
+                if result != nil {
+                    cell.myImageView?.image = result
+                }
+            })
+        }
+        
         return cell
     }
     
