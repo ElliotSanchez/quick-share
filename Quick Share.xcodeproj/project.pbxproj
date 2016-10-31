@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4111A6A1DC7BAB9007F1123 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */; };
 		F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */; };
 		F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A71DC7A9FA0072A88E /* ViewController.swift */; };
 		F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43C32A91DC7A9FA0072A88E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F43C32A21DC7A9FA0072A88E /* Quick Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43C32A71DC7A9FA0072A88E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */,
 				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
 				F43C32B11DC7A9FA0072A88E /* Info.plist */,
+				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
 			);
 			path = "Quick Share";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */,
 				F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */,
+				F4111A6A1DC7BAB9007F1123 /* MyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +522,7 @@
 				F43C32CC1DC7A9FA0072A88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F43C32CD1DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +531,7 @@
 				F43C32CF1DC7A9FA0072A88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F43C32D01DC7A9FA0072A88E /* Build configuration list for PBXNativeTarget "Quick ShareUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +540,7 @@
 				F43C32D21DC7A9FA0072A88E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

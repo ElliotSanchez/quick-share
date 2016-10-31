@@ -26,9 +26,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MyTableViewCell
         
-        cell.textLabel?.text = dummyObjects[indexPath.row]
+        cell.myImageView.image = #imageLiteral(resourceName: "polaroid")
+        //cell.textLabel?.text = dummyObjects[indexPath.row]
         return cell
     }
     
