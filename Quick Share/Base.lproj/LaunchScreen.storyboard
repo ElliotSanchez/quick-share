@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,27 +20,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="polaroid.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ROB-Dc-kdl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images/polaroid.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ROB-Dc-kdl">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ROB-Dc-kdl" secondAttribute="height" multiplier="375:284" id="NDf-iL-uA3"/>
+                                    <constraint firstAttribute="width" secondItem="ROB-Dc-kdl" secondAttribute="height" multiplier="80:63" id="EeB-Io-yPS"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Share" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="none" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="qSE-DN-efm">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ROB-Dc-kdl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3Kr-ZT-P91"/>
+                            <constraint firstItem="qSE-DN-efm" firstAttribute="top" secondItem="ROB-Dc-kdl" secondAttribute="bottom" id="Egc-aM-wbL"/>
                             <constraint firstAttribute="trailing" secondItem="ROB-Dc-kdl" secondAttribute="trailing" id="NQj-tv-qyx"/>
-                            <constraint firstItem="ROB-Dc-kdl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="P3P-V4-RTX"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qSE-DN-efm" secondAttribute="bottom" id="QnG-5f-jpC"/>
+                            <constraint firstItem="ROB-Dc-kdl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U5G-GW-lLn"/>
+                            <constraint firstItem="ROB-Dc-kdl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Wg7-0n-A4b"/>
+                            <constraint firstItem="qSE-DN-efm" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="cnD-ce-QSJ"/>
+                            <constraint firstItem="qSE-DN-efm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="hab-JH-DNi"/>
                             <constraint firstItem="ROB-Dc-kdl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rVW-MJ-wIt"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="49.275362318840585" y="373.36956521739131"/>
         </scene>
     </scenes>
     <resources>
-        <image name="polaroid.jpg" width="1920" height="1535"/>
+        <image name="images/polaroid.jpg" width="16" height="16"/>
     </resources>
 </document>
