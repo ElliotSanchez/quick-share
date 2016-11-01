@@ -35,17 +35,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UQM-0k-D9g">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableViewCell" rowHeight="160" id="etJ-ae-Pdt" customClass="MyTableViewCell" customModule="Quick_Share" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="160"/>
+                                        <rect key="frame" x="0.0" y="92" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etJ-ae-Pdt" id="fkX-JI-hMf">
-                                            <frame key="frameInset" width="375" height="159"/>
+                                            <frame key="frameInset" width="414" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-JW-WDF"/>
@@ -90,20 +90,72 @@
                         <viewControllerLayoutGuide type="bottom" id="grs-yN-FM4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rt6-Fz-6Nw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Jf-2X-sBp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Jf-2X-sBp">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="9Jf-2X-sBp" secondAttribute="height" multiplier="343:274" id="Vaa-J7-yog"/>
+                                    <constraint firstAttribute="width" secondItem="9Jf-2X-sBp" secondAttribute="height" multiplier="1:1" id="6ce-ok-DD7"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8FN-JV-U1P">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eYv-B2-Jcp">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-fi-C1Z">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0HJ-fi-C1Z" secondAttribute="height" multiplier="1:1" id="g18-FF-K4x"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="fb"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hO-cj-QAw">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5hO-cj-QAw" secondAttribute="height" multiplier="1:1" id="evL-JR-PMu"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="insta"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-vV-D9O">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Gp8-vV-D9O" secondAttribute="height" multiplier="1:1" id="Zaz-3Q-4Py"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="fb-mess"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-pz-t7H">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-dO-TCM">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5YP-dO-TCM" secondAttribute="height" multiplier="1:1" id="4HS-uU-jf2"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="twitter"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-5z-tVG">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="QoM-5z-tVG" secondAttribute="height" multiplier="1:1" id="SBX-yf-rJd"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="pin"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qk-aa-wmL">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6qk-aa-wmL" secondAttribute="height" multiplier="1:1" id="U0J-05-Zlv"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="whats"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Jf-2X-sBp" secondAttribute="trailing" id="Tgf-19-xUQ"/>
-                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="top" secondItem="jKP-eq-EU2" secondAttribute="bottom" id="VWo-zu-P9i"/>
-                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="leading" secondItem="rt6-Fz-6Nw" secondAttribute="leadingMargin" id="yol-bT-Ws9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8FN-JV-U1P" secondAttribute="bottom" id="7kB-c1-5Bx"/>
+                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="top" secondItem="jKP-eq-EU2" secondAttribute="bottom" id="CF8-98-d5X"/>
+                            <constraint firstItem="8FN-JV-U1P" firstAttribute="top" secondItem="9Jf-2X-sBp" secondAttribute="bottom" constant="10" id="Fz2-UE-BtR"/>
+                            <constraint firstItem="8FN-JV-U1P" firstAttribute="leading" secondItem="rt6-Fz-6Nw" secondAttribute="leadingMargin" id="TBU-CL-sJG"/>
+                            <constraint firstAttribute="trailing" secondItem="9Jf-2X-sBp" secondAttribute="trailing" id="gGp-0Q-wTM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8FN-JV-U1P" secondAttribute="trailing" id="keH-cN-3Dx"/>
+                            <constraint firstItem="9Jf-2X-sBp" firstAttribute="leading" secondItem="rt6-Fz-6Nw" secondAttribute="leading" id="pLl-77-JE0"/>
                         </constraints>
                     </view>
                     <connections>
@@ -115,4 +167,12 @@
             <point key="canvasLocation" x="1032.8" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fb" width="325" height="325"/>
+        <image name="fb-mess" width="800" height="800"/>
+        <image name="insta" width="449" height="449"/>
+        <image name="pin" width="300" height="300"/>
+        <image name="twitter" width="512" height="512"/>
+        <image name="whats" width="300" height="300"/>
+    </resources>
 </document>
