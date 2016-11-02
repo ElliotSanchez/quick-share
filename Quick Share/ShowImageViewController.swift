@@ -14,6 +14,9 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
 
     @IBOutlet weak var imageView: UIImageView!
     
+    // Document controller is class level variable needed for instagram sharing code below
+    var docController: UIDocumentInteractionController?
+    
     var asset: PHAsset?
     
     @IBAction func shareButtonClicked (_ sender: UIButton) {
@@ -22,7 +25,8 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
             if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
                 shareFacebookTwitter(vc: vc)
             }
-        case 2: print("instagram")
+        case 2:
+            shareInstagram()
         case 3: print("fb messenger")
         case 4:
             if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
@@ -32,12 +36,6 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         case 6: print("whatsapp")
         default: print("nothing")
         }
-    }
-    
-    func shareFacebookTwitter (vc: SLComposeViewController) {
-        vc.setInitialText("Check out this picture I shared with Quick Share!")
-        vc.add(imageView.image)
-        present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -60,6 +58,39 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         }
     }
 
+    ////////////////////////////////////////
+    // SERVICE SPECIFIC SHARING FUNCTIONS //
+    ////////////////////////////////////////
+    func shareFacebookTwitter (vc: SLComposeViewController) {
+        vc.setInitialText("Check out this picture I shared with Quick Share")
+        vc.add(imageView.image)
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func shareInstagram () {
+        let InstagramURL = URL(string: "instagram://app")
+        if (UIApplication.shared.canOpenURL(InstagramURL!)) {
+            let imageData = UIImageJPEGRepresentation(imageView.image!, 75)
+            let captionString = "Check out this picture I shared with Quick Share"
+            
+            let writePath = (NSTemporaryDirectory() as NSString).appending("instagram.igo")
+            
+            do {
+                try imageData?.write(to: URL(fileURLWithPath: writePath), options: [.atomicWrite])
+                let fileURL = URL(fileURLWithPath: writePath)
+                
+                self.docController = UIDocumentInteractionController(url: fileURL)
+                self.docController?.delegate = self
+                self.docController?.uti = "com.instagram.exclusivegram"
+                self.docController?.annotation = NSDictionary(object: captionString, forKey: "InstagramCaption" as NSCopying)
+                self.docController?.presentOpenInMenu(from: self.view.frame, in: self.view, animated: true)
+            } catch {
+                print("Error sharing to instagram in ShowImageViewController.ShareInstagram()")
+            }
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
