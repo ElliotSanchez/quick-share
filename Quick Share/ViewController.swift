@@ -9,15 +9,40 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    // Class level variables to store the photos
+    // Variables to store the photos
     var assetCollection: PHAssetCollection?
     var photos: PHFetchResult<PHAsset>?
     
-    @IBOutlet weak var tableView: UITableView!
+    // Variable to choose photos from camera roll
+    var imagePicker = UIImagePickerController()
     
+    // Table of photo thumbnails / previews
+    @IBOutlet weak var tableView: UITableView!
+    // Centrally named reuse identifier for ease of changes, if needed
     let reuseIdentifier = "tableViewCell"
+    
+    @IBAction func tapCameraButton(_ sender: AnyObject) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+        // Instantiate new Show Image View Controller to go directly from camera to reviewing the photo
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageVC") as! ShowImageViewController
+        
+        // If we can get an image from the UIImagePickerController, pass it to the ShowImageVC, then show that VC
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            newVC.image = image
+            show(newVC, sender: self)
+        }
+    }
+    
+    
     
     // dummy array to check and make sure table view is working. 
     // var dummyObjects = ["hi", "hello", "there", "I'm", "awesome!"]
@@ -92,7 +117,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     ///////////////////////////////////
     // UITableViewDelegate FUNCTIONS //
     ///////////////////////////////////
-    //
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
