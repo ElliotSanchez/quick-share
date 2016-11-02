@@ -98,49 +98,67 @@
                                     <constraint firstAttribute="width" secondItem="9Jf-2X-sBp" secondAttribute="height" multiplier="1:1" id="6ce-ok-DD7"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8FN-JV-U1P">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8FN-JV-U1P">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eYv-B2-Jcp">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eYv-B2-Jcp">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-fi-C1Z">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HJ-fi-C1Z">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0HJ-fi-C1Z" secondAttribute="height" multiplier="1:1" id="g18-FF-K4x"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="fb"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="fUV-lp-eJk"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hO-cj-QAw">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hO-cj-QAw">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5hO-cj-QAw" secondAttribute="height" multiplier="1:1" id="evL-JR-PMu"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="insta"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="48y-dw-pxv"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-vV-D9O">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-vV-D9O">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Gp8-vV-D9O" secondAttribute="height" multiplier="1:1" id="Zaz-3Q-4Py"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="fb-mess"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="elb-5n-viB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-pz-t7H">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-pz-t7H">
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-dO-TCM">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-dO-TCM">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5YP-dO-TCM" secondAttribute="height" multiplier="1:1" id="4HS-uU-jf2"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="twitter"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="2uu-FY-Uft"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-5z-tVG">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-5z-tVG">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QoM-5z-tVG" secondAttribute="height" multiplier="1:1" id="SBX-yf-rJd"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="pin"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="Eqp-pN-Zly"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qk-aa-wmL">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qk-aa-wmL">
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="6qk-aa-wmL" secondAttribute="height" multiplier="1:1" id="U0J-05-Zlv"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="whats"/>
+                                                <connections>
+                                                    <action selector="shareButtonClicked:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="qGW-3k-jGR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -149,9 +167,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="8FN-JV-U1P" secondAttribute="bottom" id="7kB-c1-5Bx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8FN-JV-U1P" secondAttribute="bottom" constant="20" id="7kB-c1-5Bx"/>
                             <constraint firstItem="9Jf-2X-sBp" firstAttribute="top" secondItem="jKP-eq-EU2" secondAttribute="bottom" id="CF8-98-d5X"/>
-                            <constraint firstItem="8FN-JV-U1P" firstAttribute="top" secondItem="9Jf-2X-sBp" secondAttribute="bottom" constant="10" id="Fz2-UE-BtR"/>
+                            <constraint firstItem="8FN-JV-U1P" firstAttribute="top" secondItem="9Jf-2X-sBp" secondAttribute="bottom" constant="20" id="Fz2-UE-BtR"/>
                             <constraint firstItem="8FN-JV-U1P" firstAttribute="leading" secondItem="rt6-Fz-6Nw" secondAttribute="leadingMargin" id="TBU-CL-sJG"/>
                             <constraint firstAttribute="trailing" secondItem="9Jf-2X-sBp" secondAttribute="trailing" id="gGp-0Q-wTM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8FN-JV-U1P" secondAttribute="trailing" id="keH-cN-3Dx"/>
