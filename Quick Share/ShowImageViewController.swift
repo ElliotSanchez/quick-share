@@ -33,7 +33,8 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
                 shareFacebookTwitter(vc: vc)
             }
         case 5: print("pinterest")
-        case 6: print("whatsapp")
+        case 6:
+            shareWhatsapp()
         default: print("nothing")
         }
     }
@@ -61,12 +62,14 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     ////////////////////////////////////////
     // SERVICE SPECIFIC SHARING FUNCTIONS //
     ////////////////////////////////////////
+    // Facebook and Twitter
     func shareFacebookTwitter (vc: SLComposeViewController) {
         vc.setInitialText("Check out this picture I shared with Quick Share")
         vc.add(imageView.image)
         present(vc, animated: true, completion: nil)
     }
     
+    // Instagram
     func shareInstagram () {
         let InstagramURL = URL(string: "instagram://app")
         if (UIApplication.shared.canOpenURL(InstagramURL!)) {
@@ -90,7 +93,32 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
             
         }
     }
+
+    // Whatsapp
+    func shareWhatsapp () {
+        let whatsappURL = URL(string: "whatsapp://app")
+        
+        // Stacked if conditional, so that all must be true in order to proceed
+        if UIApplication.shared.canOpenURL(whatsappURL!), //and
+        let image = imageView.image, //and
+        let imageData = UIImageJPEGRepresentation(image, 75) { //then
+            let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai")
+            
+            do {
+                try imageData.write(to: tempFile, options: .atomicWrite)
+                self.docController = UIDocumentInteractionController(url: tempFile)
+                self.docController?.uti = "net.whatsapp.image"
+                self.docController?.presentOpenInMenu(from: self.view.frame, in:self.view, animated: true)
+            } catch {
+                print("Error in ShowImageViewController.shareWhatsapp()")
+            }
+        } else {
+            print("Error finding oyour image or the Whatsapp application")
+        }
+    }
     
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
