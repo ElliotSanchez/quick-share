@@ -4,6 +4,8 @@
 <dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>whatsapp</string>
+		<string>pinterest</string>
 		<string>instagram</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
