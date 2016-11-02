@@ -10,12 +10,6 @@
 		F4111A6A1DC7BAB9007F1123 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */; };
 		F4111A6C1DC7C8C2007F1123 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */; };
 		F4111A6F1DC7CE95007F1123 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4111A6E1DC7CE95007F1123 /* Photos.framework */; };
-		F4111A761DC924E9007F1123 /* fb-mess.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A701DC924E9007F1123 /* fb-mess.png */; };
-		F4111A771DC924E9007F1123 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A711DC924E9007F1123 /* fb.png */; };
-		F4111A781DC924E9007F1123 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A721DC924E9007F1123 /* insta.png */; };
-		F4111A791DC924E9007F1123 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A731DC924E9007F1123 /* pin.png */; };
-		F4111A7A1DC924E9007F1123 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A741DC924E9007F1123 /* twitter.png */; };
-		F4111A7B1DC924E9007F1123 /* whats.png in Resources */ = {isa = PBXBuildFile; fileRef = F4111A751DC924E9007F1123 /* whats.png */; };
 		F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */; };
 		F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32A71DC7A9FA0072A88E /* ViewController.swift */; };
 		F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43C32A91DC7A9FA0072A88E /* Main.storyboard */; };
@@ -47,12 +41,6 @@
 		F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
 		F4111A6E1DC7CE95007F1123 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		F4111A701DC924E9007F1123 /* fb-mess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fb-mess.png"; path = "images/fb-mess.png"; sourceTree = "<group>"; };
-		F4111A711DC924E9007F1123 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = images/fb.png; sourceTree = "<group>"; };
-		F4111A721DC924E9007F1123 /* insta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = insta.png; path = images/insta.png; sourceTree = "<group>"; };
-		F4111A731DC924E9007F1123 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = images/pin.png; sourceTree = "<group>"; };
-		F4111A741DC924E9007F1123 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = images/twitter.png; sourceTree = "<group>"; };
-		F4111A751DC924E9007F1123 /* whats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whats.png; path = images/whats.png; sourceTree = "<group>"; };
 		F43C32A21DC7A9FA0072A88E /* Quick Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43C32A71DC7A9FA0072A88E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,12 +120,6 @@
 				F43C32A71DC7A9FA0072A88E /* ViewController.swift */,
 				F43C32A91DC7A9FA0072A88E /* Main.storyboard */,
 				F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */,
-				F4111A701DC924E9007F1123 /* fb-mess.png */,
-				F4111A711DC924E9007F1123 /* fb.png */,
-				F4111A721DC924E9007F1123 /* insta.png */,
-				F4111A731DC924E9007F1123 /* pin.png */,
-				F4111A741DC924E9007F1123 /* twitter.png */,
-				F4111A751DC924E9007F1123 /* whats.png */,
 				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
 				F43C32B11DC7A9FA0072A88E /* Info.plist */,
 				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
@@ -275,15 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43C32D41DC7ABB70072A88E /* images in Resources */,
-				F4111A791DC924E9007F1123 /* pin.png in Resources */,
 				F43C32B01DC7A9FA0072A88E /* LaunchScreen.storyboard in Resources */,
-				F4111A761DC924E9007F1123 /* fb-mess.png in Resources */,
 				F43C32AD1DC7A9FA0072A88E /* Assets.xcassets in Resources */,
-				F4111A781DC924E9007F1123 /* insta.png in Resources */,
-				F4111A7A1DC924E9007F1123 /* twitter.png in Resources */,
-				F4111A7B1DC924E9007F1123 /* whats.png in Resources */,
 				F43C32AB1DC7A9FA0072A88E /* Main.storyboard in Resources */,
-				F4111A771DC924E9007F1123 /* fb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
