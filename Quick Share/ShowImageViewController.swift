@@ -98,12 +98,11 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     func shareWhatsapp () {
         let whatsappURL = URL(string: "whatsapp://app")
         
-        // Stacked if conditional, so that all must be true in order to proceed
+        // Bound conditionals
         if UIApplication.shared.canOpenURL(whatsappURL!), //and
         let image = imageView.image, //and
-        let imageData = UIImageJPEGRepresentation(image, 75) { //then
-            let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai")
-            
+        let imageData = UIImageJPEGRepresentation(image, 75), //and
+        let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai") as URL? { //then
             do {
                 try imageData.write(to: tempFile, options: .atomicWrite)
                 self.docController = UIDocumentInteractionController(url: tempFile)
@@ -113,7 +112,7 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
                 print("Error in ShowImageViewController.shareWhatsapp()")
             }
         } else {
-            print("Error finding oyour image or the Whatsapp application")
+            print("Error finding your image or the Whatsapp application")
         }
     }
     
