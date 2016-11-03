@@ -12,7 +12,7 @@
         <scene sceneID="HgA-fe-FcA">
             <objects>
                 <navigationController id="Cin-G5-StH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kNE-eR-Aoe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kNE-eR-Aoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
