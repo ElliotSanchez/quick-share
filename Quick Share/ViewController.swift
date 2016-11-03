@@ -29,32 +29,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        
-        // Instantiate new Show Image View Controller to go directly from camera to reviewing the photo
-        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageVC") as! ShowImageViewController
-        
-        // If we can get an image from the UIImagePickerController, pass it to the ShowImageVC, then show that VC
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            newVC.image = image
-            show(newVC, sender: self)
-        }
-    }
-    
-    
-    
-    // dummy array to check and make sure table view is working. 
-    // var dummyObjects = ["hi", "hello", "there", "I'm", "awesome!"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Set the data source and delegated responder for our tableView as this viewController class, aka, self
         tableView.dataSource = self
         tableView.delegate = self
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         // Get the photos and put them in the class level variables created earlier
         let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
         
@@ -69,7 +52,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             print("No photos found during viewDidLoad")
         }
+        
+        tableView.reloadData()
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+        // Instantiate new Show Image View Controller to go directly from camera to reviewing the photo
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageVC") as! ShowImageViewController
+        
+        // If we can get an image from the UIImagePickerController, pass it to the ShowImageVC, then show that VC
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            newVC.image = image
+            show(newVC, sender: self)
+            
+            // Save image to camera roll
+            UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
+        }
+    }
+    
+
 
     // Called anytime we are about to navigate away from current view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,9 +112,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
-    // Currently sets length of table at fixed length
+    // Currently sets length of table to match number of photos 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let numberOfPhotos = self.photos?.count {
+            return numberOfPhotos
+        } else {
+            return 1
+        }
     }
     
     ///////////////////////////////////
