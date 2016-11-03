@@ -20,22 +20,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images/polaroid.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ROB-Dc-kdl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="polaroid" translatesAutoresizingMaskIntoConstraints="NO" id="ROB-Dc-kdl">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ROB-Dc-kdl" secondAttribute="height" multiplier="80:63" id="EeB-Io-yPS"/>
+                                    <constraint firstAttribute="width" secondItem="ROB-Dc-kdl" secondAttribute="height" multiplier="1:1.1" id="EeB-Io-yPS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Share" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="none" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="qSE-DN-efm">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Share" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qSE-DN-efm">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98552530999999999" green="0.991492331" blue="0.98801976439999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qSE-DN-efm" firstAttribute="top" secondItem="ROB-Dc-kdl" secondAttribute="bottom" id="Egc-aM-wbL"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qSE-DN-efm" secondAttribute="bottom" id="GOA-6n-EBe"/>
                             <constraint firstAttribute="trailing" secondItem="ROB-Dc-kdl" secondAttribute="trailing" id="NQj-tv-qyx"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qSE-DN-efm" secondAttribute="bottom" id="QnG-5f-jpC"/>
                             <constraint firstItem="ROB-Dc-kdl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U5G-GW-lLn"/>
                             <constraint firstItem="ROB-Dc-kdl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Wg7-0n-A4b"/>
                             <constraint firstItem="qSE-DN-efm" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="cnD-ce-QSJ"/>
@@ -50,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="images/polaroid.jpg" width="16" height="16"/>
+        <image name="polaroid" width="960" height="767"/>
     </resources>
 </document>
