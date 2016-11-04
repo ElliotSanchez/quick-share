@@ -11,9 +11,16 @@ import Photos
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    // Debug counter for reloads
+    var checkPermissionCounter = 0
+    var checkViewWillAppearCounter = 0
+    
     // Variables to store the photos
     var assetCollection: PHAssetCollection?
     var photos: PHFetchResult<PHAsset>?
+    
+    // Variable to store the photo access status for checking
+    let photoAccessStatus = PHPhotoLibrary.authorizationStatus()
     
     // Variable to choose photos from camera roll
     var imagePicker = UIImagePickerController()
@@ -38,22 +45,53 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Get the photos and put them in the class level variables created earlier
-        let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
-        
-        if (collection.firstObject != nil) {
-            self.assetCollection = collection.firstObject!
+        checkViewWillAppearCounter += 1
+        print("Begin viewWillAppear run \(checkViewWillAppearCounter)")
+        if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
+            self.assetCollection = collection
             
             let options = PHFetchOptions()
             options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
             options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
             
             self.photos = PHAsset.fetchAssets(in: assetCollection!, options: options)
+            self.tableView.reloadData()
         } else {
-            print("No photos found during viewDidLoad")
+            checkPhotoLibraryPermission()
         }
+        self.tableView.reloadData()
+        print("End viewWillAppear run \(checkViewWillAppearCounter)")
+    }
+    
+    // Found at http://stackoverflow.com/questions/26595343/determine-if-the-access-to-photo-library-is-set-or-not-ios-8#26595480
+    func checkPhotoLibraryPermission() {
+        checkPermissionCounter += 1
+        print("Begin checkPhotoLibraryPermission run \(checkPermissionCounter)")
         
-        tableView.reloadData()
+        switch photoAccessStatus {
+        case .authorized:
+            print("Access authorized in first pass.")
+            tableView.reloadData()
+        case .denied, .restricted :
+            print("Photo access denied by the user.")
+        case .notDetermined:
+            // ask for permissions
+            PHPhotoLibrary.requestAuthorization() { status in
+                switch self.photoAccessStatus {
+                case .authorized:
+                    print("Access authorized in second pass.")
+                    self.tableView.reloadData()
+                case .denied, .restricted:
+                    print("Photo access denied by the user.")
+                case .notDetermined:
+                    print("Unclear how photo access was resolved by user")
+                }
+                print("Call viewWillAppear from deep in Auth request")
+                self.viewWillAppear(true)
+            }
+        }
+
+        print("Ended checkPhotoLibraryPermission run \(checkPermissionCounter)")
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -72,8 +110,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-
-
     // Called anytime we are about to navigate away from current view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
@@ -104,7 +140,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             })
         }
-        
         return cell
     }
     
