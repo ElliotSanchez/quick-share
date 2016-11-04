@@ -48,14 +48,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         checkViewWillAppearCounter += 1
         print("Begin viewWillAppear run \(checkViewWillAppearCounter)")
         if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
-            self.assetCollection = collection
             
-            let options = PHFetchOptions()
-            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
-            options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+            DispatchQueue.main.async(){
+                self.assetCollection = collection
+                    
+                let options = PHFetchOptions()
+                options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+                options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                
+                self.photos = PHAsset.fetchAssets(in: self.assetCollection!, options: options)
+                self.tableView.reloadData()
+            }
             
-            self.photos = PHAsset.fetchAssets(in: assetCollection!, options: options)
-            self.tableView.reloadData()
         } else {
             checkPhotoLibraryPermission()
         }
