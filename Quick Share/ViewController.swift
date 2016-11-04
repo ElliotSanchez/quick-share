@@ -59,7 +59,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             checkPhotoLibraryPermission()
         }
-        self.tableView.reloadData()
         print("End viewWillAppear run \(checkViewWillAppearCounter)")
     }
     
@@ -70,24 +69,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         switch photoAccessStatus {
         case .authorized:
-            print("Access authorized in first pass.")
+            print("Access previously authorized.")
             tableView.reloadData()
         case .denied, .restricted :
-            print("Photo access denied by the user.")
+            print("Photo access previously denied by the user.")
         case .notDetermined:
+            print("Prompting for photo library access...")
             // ask for permissions
-            PHPhotoLibrary.requestAuthorization() { status in
-                switch self.photoAccessStatus {
+            PHPhotoLibrary.requestAuthorization() { photoAccessStatus in
+                switch photoAccessStatus {
                 case .authorized:
-                    print("Access authorized in second pass.")
-                    self.tableView.reloadData()
+                    print("Access authorized in user prompt, calling viewWillAppear.")
+                    self.viewWillAppear(true)
                 case .denied, .restricted:
-                    print("Photo access denied by the user.")
+                    print("Photo access denied by the user in prompt.")
                 case .notDetermined:
-                    print("Unclear how photo access was resolved by user")
+                    print("Unclear how photo access was resolved by user in prompt.")
                 }
-                print("Call viewWillAppear from deep in Auth request")
-                self.viewWillAppear(true)
+                print("Completed checkPhotoLibraryPermission authorization request.")
             }
         }
 
