@@ -444,7 +444,7 @@
 				DEVELOPMENT_TEAM = KNYX5GL2V8;
 				INFOPLIST_FILE = "Quick Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-Share";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notungood.quick-share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -457,7 +457,7 @@
 				DEVELOPMENT_TEAM = KNYX5GL2V8;
 				INFOPLIST_FILE = "Quick Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "notungood.Quick-Share";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notungood.quick-share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
