@@ -3,7 +3,8 @@
 //  Quick Share
 //
 //  Created by hostname on 10/31/16.
-//  Copyright © 2016 notungood. All rights reserved.
+//  Copyright © 2016 notungood. 
+//  All rights reserved.
 //
 
 import UIKit
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         checkViewWillAppearCounter += 1
-        print("Begin viewWillAppear run \(checkViewWillAppearCounter)")
+        print("Begin viewWillAppear run # \(checkViewWillAppearCounter)")
         if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
             
             DispatchQueue.main.async(){
@@ -63,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             checkPhotoLibraryPermission()
         }
-        print("End viewWillAppear run \(checkViewWillAppearCounter)")
+        print("End viewWillAppear run # \(checkViewWillAppearCounter)")
     }
     
     // Found at http://stackoverflow.com/questions/26595343/determine-if-the-access-to-photo-library-is-set-or-not-ios-8#26595480
