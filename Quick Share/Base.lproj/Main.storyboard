@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="966" y="139"/>
         </scene>
-        <!--Show Image View Controller-->
+        <!--Share Image View Controller-->
         <scene sceneID="DMI-tt-cr5">
             <objects>
-                <viewController storyboardIdentifier="ShowImageVC" id="Vrg-yl-ZsY" customClass="ShowImageViewController" customModule="Quick_Share" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareImageVC" id="Vrg-yl-ZsY" customClass="ShareImageViewController" customModule="Quick_Share" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rl2-5V-0ww"/>
                         <viewControllerLayoutGuide type="bottom" id="miw-oQ-OsL"/>

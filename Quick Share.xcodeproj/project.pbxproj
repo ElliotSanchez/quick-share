@@ -18,6 +18,7 @@
 		F43C32BB1DC7A9FA0072A88E /* Quick_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32BA1DC7A9FA0072A88E /* Quick_ShareTests.swift */; };
 		F43C32C61DC7A9FA0072A88E /* Quick_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */; };
 		F43C32D41DC7ABB70072A88E /* images in Resources */ = {isa = PBXBuildFile; fileRef = F43C32D31DC7ABB70072A88E /* images */; };
+		F4A0B17B1E3669430020006C /* ShareImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0B17A1E3669430020006C /* ShareImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F43C32C51DC7A9FA0072A88E /* Quick_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quick_ShareUITests.swift; sourceTree = "<group>"; };
 		F43C32C71DC7A9FA0072A88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43C32D31DC7ABB70072A88E /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		F4A0B17A1E3669430020006C /* ShareImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
 				F43C32B11DC7A9FA0072A88E /* Info.plist */,
 				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
+				F4A0B17A1E3669430020006C /* ShareImageViewController.swift */,
 				F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */,
 			);
 			path = "Quick Share";
@@ -287,6 +290,7 @@
 				F43C32A81DC7A9FA0072A88E /* ViewController.swift in Sources */,
 				F43C32A61DC7A9FA0072A88E /* AppDelegate.swift in Sources */,
 				F4111A6A1DC7BAB9007F1123 /* MyTableViewCell.swift in Sources */,
+				F4A0B17B1E3669430020006C /* ShareImageViewController.swift in Sources */,
 				F4111A6C1DC7C8C2007F1123 /* ShowImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
