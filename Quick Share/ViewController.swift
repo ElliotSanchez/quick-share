@@ -12,6 +12,9 @@ import Photos
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    // Activity indicator
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
+    
     // Debug counter for reloads
     var checkPermissionCounter = 0
     var checkViewWillAppearCounter = 0
@@ -50,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("Begin viewWillAppear run # \(checkViewWillAppearCounter)")
         if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
             
-            DispatchQueue.main.async(){
+            DispatchQueue.main.async() {
                 self.assetCollection = collection
                     
                 let options = PHFetchOptions()
@@ -59,6 +62,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 self.photos = PHAsset.fetchAssets(in: self.assetCollection!, options: options)
                 self.tableView.reloadData()
+                
+                self.activitySpinner.stopAnimating()
             }
             
         } else {

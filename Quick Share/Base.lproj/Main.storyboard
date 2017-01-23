@@ -54,7 +54,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-JW-WDF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -74,12 +74,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BuD-Vp-aAK">
+                                <rect key="frame" x="177" y="324" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UQM-0k-D9g" secondAttribute="trailing" id="UvN-Ym-ee9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UQM-0k-D9g" secondAttribute="bottom" id="Wp7-wx-ord"/>
                             <constraint firstItem="UQM-0k-D9g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q8T-4c-ZIR"/>
+                            <constraint firstItem="BuD-Vp-aAK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rpE-9B-ne4"/>
+                            <constraint firstItem="BuD-Vp-aAK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wiV-vX-2Wq"/>
                             <constraint firstItem="UQM-0k-D9g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="x9m-EE-p8I"/>
                         </constraints>
                     </view>
@@ -92,6 +97,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="activitySpinner" destination="BuD-Vp-aAK" id="E4W-34-ZOY"/>
                         <outlet property="tableView" destination="UQM-0k-D9g" id="UXf-Qt-5sk"/>
                     </connections>
                 </viewController>
