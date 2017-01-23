@@ -15,6 +15,12 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     // View of the full sized image we are sharing
     @IBOutlet weak var imageView: UIImageView!
     
+    // Outlet for the button to transition into sharing view
+    @IBAction func shareImage(_ sender: Any) {
+        
+    }
+    
+    
     // Document controller is class level variable needed for instagram sharing code below
     var docController: UIDocumentInteractionController?
     
@@ -33,7 +39,7 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
             PHImageManager.default().requestImage(
                 for: myAsset,
                 targetSize: CGSize(
-                    width: self.view.frame.width,
+                    width: self.view.frame.height,
                     height: self.view.frame.width),
                 contentMode: .aspectFit,
                 options: nil,
@@ -51,14 +57,6 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         }
     }
 
-  
-    
-    
-    // Single outlet for all sharing buttons, differentiated by tags, numbered 1-6
-    // Each calls a sharing function below
-    @IBAction func shareButtonClicked (_ sender: UIButton) {
-        
-    }
     
 
     override func didReceiveMemoryWarning() {
@@ -67,14 +65,23 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     }
     
 
-    /*
-    // MARK: - Navigation
 
+    // MARK: - Navigation
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
-
+    // Called anytime we are about to navigate away from current view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            if (id == "shareImageSegue") {
+                let newVc = segue.destination as! ShareImageViewController
+                
+                newVc.myImage = self.imageView.image
+            }
+        }
+    }
 }

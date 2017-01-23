@@ -123,19 +123,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="gIV-Xz-Kkc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qwO-gs-aXA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qwO-gs-aXA">
+                            <connections>
+                                <action selector="shareImage:" destination="Qxc-qX-Vug" id="kU3-MS-aed"/>
+                                <segue destination="Vrg-yl-ZsY" kind="show" identifier="shareImageSegue" id="5kh-b5-oBz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="9Jf-2X-sBp" id="SL8-fU-Lfe"/>
-                        <segue destination="Vrg-yl-ZsY" kind="show" id="aSS-tB-8iC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caU-1G-faz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="38"/>
         </scene>
-        <!--Share Image View Controller-->
+        <!--Share-->
         <scene sceneID="DMI-tt-cr5">
             <objects>
                 <viewController storyboardIdentifier="ShareImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vrg-yl-ZsY" customClass="ShareImageViewController" customModule="Quick_Share" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-0c-lQM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUu-0c-lQM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uUu-0c-lQM" secondAttribute="height" multiplier="1:1" id="tru-5T-xRe"/>
@@ -219,13 +224,11 @@
                             <constraint firstItem="Tod-Kv-lFi" firstAttribute="top" secondItem="uUu-0c-lQM" secondAttribute="bottom" constant="20" id="zQh-ek-CIz"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="YdU-0y-SPa"/>
-                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Share" id="Qhm-CN-MaV"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="uUu-0c-lQM" id="v3k-3P-ZsL"/>
+                        <outlet property="imageView" destination="uUu-0c-lQM" id="0tl-rR-u5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKg-Uw-04P" userLabel="First Responder" sceneMemberID="firstResponder"/>
