@@ -125,8 +125,8 @@
 				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
 				F43C32B11DC7A9FA0072A88E /* Info.plist */,
 				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
-				F4A0B17A1E3669430020006C /* ShareImageViewController.swift */,
 				F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */,
+				F4A0B17A1E3669430020006C /* ShareImageViewController.swift */,
 			);
 			path = "Quick Share";
 			sourceTree = "<group>";
