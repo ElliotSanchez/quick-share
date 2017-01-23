@@ -24,11 +24,11 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = myImage
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // load image passed from Preview screen
-        self.imageView.image = myImage
     }
     
     

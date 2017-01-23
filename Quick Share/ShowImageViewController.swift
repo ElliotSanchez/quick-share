@@ -79,8 +79,8 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         if let id = segue.identifier {
             if (id == "shareImageSegue") {
                 let newVc = segue.destination as! ShareImageViewController
-                
-                newVc.myImage = self.imageView.image
+                image = self.imageView.image
+                newVc.myImage = image
             }
         }
     }
