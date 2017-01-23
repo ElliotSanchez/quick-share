@@ -16,11 +16,14 @@
         <scene sceneID="HgA-fe-FcA">
             <objects>
                 <navigationController id="Cin-G5-StH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kNE-eR-Aoe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="kNE-eR-Aoe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.98552530999999999" green="0.991492331" blue="0.98801976439999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.99399173250306072" green="1" blue="0.83962498077241143" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UMW-4a-pOp"/>
@@ -28,7 +31,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0M-Wo-4ll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922" y="37"/>
+            <point key="canvasLocation" x="-921" y="37"/>
         </scene>
         <!--Quick Share-->
         <scene sceneID="tne-QT-ifu">
@@ -90,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Quick Share" id="nyS-FU-3L8">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="iFU-6f-gkR">
+                            <color key="tintColor" red="0.41605551451672729" green="0.65318223167339184" blue="0.70221167802810669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tapCameraButton:" destination="BYZ-38-t0r" id="OH9-3k-Vnf"/>
                             </connections>
@@ -103,6 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="25" y="37"/>
         </scene>
         <!--Preview-->
         <scene sceneID="Yan-pO-BF0">
@@ -130,6 +135,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="gIV-Xz-Kkc">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="qwO-gs-aXA">
+                            <color key="tintColor" red="0.4160555145" green="0.6531822317" blue="0.70221167799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="shareImage:" destination="Qxc-qX-Vug" id="kU3-MS-aed"/>
                                 <segue destination="Vrg-yl-ZsY" kind="show" identifier="shareImageSegue" id="5kh-b5-oBz"/>
