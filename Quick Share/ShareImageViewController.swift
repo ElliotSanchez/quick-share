@@ -13,7 +13,8 @@ import Social
 class ShareImageViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
     // View of the full sized image we are sharing
-    @IBOutlet weak var imageView: UIImageView!
+    // removed for modal presentation
+    //@IBOutlet weak var imageView: UIImageView!
     
     
     // Document controller is class level variable needed for instagram sharing code below
@@ -24,7 +25,7 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = myImage
+        //imageView.image = myImage
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +64,7 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     // Facebook and Twitter
     func shareFacebookTwitter (vc: SLComposeViewController) {
         vc.setInitialText("Check out this picture I shared with Quick Share")
-        vc.add(imageView.image)
+        vc.add(myImage)
         present(vc, animated: true, completion: nil)
     }
     
@@ -71,7 +72,7 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     func shareInstagram () {
         let InstagramURL = URL(string: "instagram://app")
         if (UIApplication.shared.canOpenURL(InstagramURL!)) {
-            let imageData = UIImageJPEGRepresentation(imageView.image!, 75)
+            let imageData = UIImageJPEGRepresentation(myImage!, 75)
             let captionString = "Check out this picture I shared with Quick Share"
             
             let writePath = (NSTemporaryDirectory() as NSString).appending("instagram.igo")
@@ -98,8 +99,7 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
         
         // Bound conditionals
         if UIApplication.shared.canOpenURL(whatsappURL!), //and
-            let image = imageView.image, //and
-            let imageData = UIImageJPEGRepresentation(image, 75), //and
+            let imageData = UIImageJPEGRepresentation(myImage!, 75), //and
             let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai") as URL? { //then
             do {
                 try imageData.write(to: tempFile, options: .atomicWrite)
