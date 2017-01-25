@@ -20,6 +20,10 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         
     }
     
+    @IBAction func tapBottomShareButton(_ sender: UIButton) {
+        sender.alpha = 0
+        performSegue(withIdentifier: "shareImageSegue", sender: nil)
+    }
     
     // Document controller is class level variable needed for instagram sharing code below
     var docController: UIDocumentInteractionController?
@@ -78,9 +82,7 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
             if (id == "shareImageSegue") {
-                let newVc = segue.destination as! ShareImageViewController
-                image = self.imageView.image
-                newVc.myImage = image
+                _ = segue.destination as! ShareImageViewController
             }
         }
     }
