@@ -10,12 +10,27 @@ import UIKit
 import Photos
 import Social
 
+// modified from example at 
+// http://stackoverflow.com/questions/25759945/pass-data-when-dismiss-modal-viewcontroller-in-swift
+// used to tell the share button on the ShowImageVC to return alpha to normal
+protocol CommunicationControllerSharing {
+    func backFromSharing()
+}
+
 class ShareImageViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
-    // View of the full sized image we are sharing
-    // removed for modal presentation
-    //@IBOutlet weak var imageView: UIImageView!
+    // used to tell the share button on the ShowImageVC to return alpha to normal
+    var delegate: CommunicationControllerSharing? = nil
     
+    
+    @IBAction func tapBigInvisibleButton(_ sender: Any) {
+        self.dismiss(animated: true) {
+        
+            // show share button again when sharing options view is hidden
+            print("tapped BigInvisible Button")
+            
+        }
+    }
     
     // Document controller is class level variable needed for instagram sharing code below
     var docController: UIDocumentInteractionController?
@@ -25,11 +40,11 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //imageView.image = myImage
+        self.delegate?.backFromSharing()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // load image passed from Preview screen
+    
     }
     
     

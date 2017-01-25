@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Centrally named reuse identifier for ease of changes, if needed
     let reuseIdentifier = "tableViewCell"
     
-    @IBAction func tapCameraButton(_ sender: AnyObject) {
+    @IBAction func tapCircleCameraButton(_ sender: UIButton) {
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)

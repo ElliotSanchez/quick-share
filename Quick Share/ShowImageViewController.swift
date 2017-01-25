@@ -10,19 +10,31 @@ import UIKit
 import Photos
 import Social
 
-class ShowImageViewController: UIViewController, UIDocumentInteractionControllerDelegate {
+// CommunicationControllerSharing is a protocol implemented in ShareImageVC
+class ShowImageViewController: UIViewController, UIDocumentInteractionControllerDelegate, CommunicationControllerSharing {
 
     // View of the full sized image we are sharing
     @IBOutlet weak var imageView: UIImageView!
     
-    // Outlet for the button to transition into sharing view
-    @IBAction func shareImage(_ sender: Any) {
-        
+    @IBAction func tapBackArrowButton(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
+    @IBOutlet weak var bottomShareButton: UIButton!
+    
     @IBAction func tapBottomShareButton(_ sender: UIButton) {
-        sender.alpha = 0
+        // hide sharing button that's covered by modal ShareImageVC
+        sender.isHidden = true
+        
+        // set self as delegate for when modal VC is dismissed
+        // see ShareImageVC comments for link to Stack overflow source
+        
         performSegue(withIdentifier: "shareImageSegue", sender: nil)
+    }
+    
+    func backFromSharing() {
+        print("Back from sharing")
+        bottomShareButton.isHidden = false
     }
     
     // Document controller is class level variable needed for instagram sharing code below
@@ -60,6 +72,11 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+               
+    }
 
     
 
@@ -84,6 +101,9 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
             if (id == "shareImageSegue") {
                 let vc = segue.destination as! ShareImageViewController
                 vc.myImage = imageView.image
+                
+                // in conjunction with protocol CommunicationControllerSharing
+                vc.delegate = self
             }
         }
     }
