@@ -82,7 +82,8 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
             if (id == "shareImageSegue") {
-                _ = segue.destination as! ShareImageViewController
+                let vc = segue.destination as! ShareImageViewController
+                vc.myImage = imageView.image
             }
         }
     }

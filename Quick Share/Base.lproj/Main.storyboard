@@ -137,6 +137,10 @@
                                 </state>
                                 <connections>
                                     <action selector="tapBottomShareButton:" destination="Qxc-qX-Vug" eventType="touchUpInside" id="AXa-OE-3kz"/>
+                                    <segue destination="Vrg-yl-ZsY" kind="presentation" identifier="shareImageSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="sJt-ET-wru">
+                                        <segue key="commit" inheritsFrom="parent" id="dvc-Lj-HLC"/>
+                                        <segue key="preview" inheritsFrom="commit" id="fxs-QK-3xL"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,15 +154,7 @@
                             <constraint firstItem="grs-yN-FM4" firstAttribute="top" secondItem="X0i-Ef-EeN" secondAttribute="bottom" constant="38" id="vPX-dk-3My"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gIV-Xz-Kkc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="qwO-gs-aXA">
-                            <color key="tintColor" red="0.4160555145" green="0.6531822317" blue="0.70221167799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="shareImage:" destination="Qxc-qX-Vug" id="kU3-MS-aed"/>
-                                <segue destination="Vrg-yl-ZsY" kind="presentation" identifier="shareImageSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="5kh-b5-oBz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gIV-Xz-Kkc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -273,5 +269,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O6o-Tq-clT"/>
+        <segue reference="sJt-ET-wru"/>
     </inferredMetricsTieBreakers>
 </document>
