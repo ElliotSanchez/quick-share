@@ -12,8 +12,9 @@ import Photos
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    // Activity indicator
-    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
+    ///////////////////////////////////
+    //      Variables and Outlets    //
+    ///////////////////////////////////
     
     // Debug counter for reloads
     var checkPermissionCounter = 0
@@ -29,10 +30,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Variable to choose photos from camera roll
     var imagePicker = UIImagePickerController()
     
-    // Table of photo thumbnails / previews
-    @IBOutlet weak var tableView: UITableView!
+    // Class level variable to store image passed to new VC on transition
+    var image = UIImage()
+    
+    
     // Centrally named reuse identifier for ease of changes, if needed
     let reuseIdentifier = "tableViewCell"
+    // Table of photo thumbnails / previews
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     @IBAction func tapCircleCameraButton(_ sender: UIButton) {
         imagePicker.delegate = self
@@ -49,10 +56,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        // debug counter
         checkViewWillAppearCounter += 1
         print("Begin viewWillAppear run # \(checkViewWillAppearCounter)")
+        
+        // If photo library access has already been granted
         if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
-            
+            // background thread to load the asset collection
             DispatchQueue.main.async() {
                 self.assetCollection = collection
                     
@@ -65,7 +76,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 self.activitySpinner.stopAnimating()
             }
-            
         } else {
             checkPhotoLibraryPermission()
         }
@@ -106,17 +116,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         
-        // Instantiate new Show Image View Controller to go directly from camera to reviewing the photo
-        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageVC") as! ShowImageViewController
-        
-        // If we can get an image from the UIImagePickerController, pass it to the ShowImageVC, then show that VC
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            newVC.image = image
-            show(newVC, sender: self)
-            
-            // Save image to camera roll
-            UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
+        // set class level image variable to image taken, used in prepareForSeque as well
+        if let newImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+             image = newImage
         }
+        
+        // Save image to camera roll and reload in background
+        DispatchQueue.main.async() {
+            // Save image to camera roll
+            UIImageWriteToSavedPhotosAlbum(self.image, self, nil, nil)
+        }
+        
+        performSegue(withIdentifier: "showFullImageSegue", sender: "imagePicker")
     }
     
     // Called anytime we are about to navigate away from current view
@@ -125,11 +136,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if (id == "showFullImageSegue") {
                 let newVc = segue.destination as! ShowImageViewController
                
-                // define indexPath since it isn't passed explicitly to prepare(for segue)
-                var indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
-                
-                if let asset = self.photos?[(indexPath?.row)!] {
-                    newVc.asset = asset
+                // need to differentiate between sender as table vs camera here?
+                if sender is UITableViewCell {
+                    // define indexPath since it isn't passed explicitly to prepare(for segue)
+                    var indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
+                    
+                    if let asset = self.photos?[(indexPath?.row)!] {
+                        newVc.asset = asset
+                    }
+                } else {
+                    newVc.image = image
                 }
             }
         }
