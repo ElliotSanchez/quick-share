@@ -121,13 +121,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
              image = newImage
         }
         
-        // Save image to camera roll and reload in background
-        DispatchQueue.main.async() {
-            // Save image to camera roll
-            UIImageWriteToSavedPhotosAlbum(self.image, self, nil, nil)
-        }
-        
-        performSegue(withIdentifier: "showFullImageSegue", sender: "imagePicker")
+        UIImageWriteToSavedPhotosAlbum(self.image, self, nil, nil)
+        performSegue(withIdentifier: "showFullImageSegue", sender: self)
     }
     
     // Called anytime we are about to navigate away from current view
@@ -136,7 +131,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if (id == "showFullImageSegue") {
                 let newVc = segue.destination as! ShowImageViewController
                
-                // need to differentiate between sender as table vs camera here?
+                // differentiate between sender as table vs camera
                 if sender is UITableViewCell {
                     // define indexPath since it isn't passed explicitly to prepare(for segue)
                     var indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
