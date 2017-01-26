@@ -12,17 +12,11 @@ import Photos
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    ///////////////////////////////////
-    //      Variables and Outlets    //
-    ///////////////////////////////////
-    
-    // Debug counter for reloads
-    var checkPermissionCounter = 0
-    var checkViewWillAppearCounter = 0
-    
+    // MARK: - Variables and Outlets
     // Variables to store the photos
     var assetCollection: PHAssetCollection?
     var photos: PHFetchResult<PHAsset>?
+    var image = UIImage()
     
     // Variable to store the photo access status for checking
     let photoAccessStatus = PHPhotoLibrary.authorizationStatus()
@@ -30,15 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Variable to choose photos from camera roll
     var imagePicker = UIImagePickerController()
     
-    // Class level variable to store image passed to new VC on transition
-    var image = UIImage()
-    
-    
-    // Centrally named reuse identifier for ease of changes, if needed
-    let reuseIdentifier = "tableViewCell"
     // Table of photo thumbnails / previews
+    let reuseIdentifier = "tableViewCell"
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     @IBAction func tapCircleCameraButton(_ sender: UIButton) {
@@ -55,11 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
     }
     
+    // MARK: - Photo Library and Camera Handling
     override func viewWillAppear(_ animated: Bool) {
-        
-        // debug counter
-        checkViewWillAppearCounter += 1
-        print("Begin viewWillAppear run # \(checkViewWillAppearCounter)")
         
         // If photo library access has already been granted
         if let collection = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).firstObject {
@@ -79,14 +64,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             checkPhotoLibraryPermission()
         }
-        print("End viewWillAppear run # \(checkViewWillAppearCounter)")
     }
     
-    // Found at http://stackoverflow.com/questions/26595343/determine-if-the-access-to-photo-library-is-set-or-not-ios-8#26595480
+    // Adapted from http://stackoverflow.com/questions/26595343/determine-if-the-access-to-photo-library-is-set-or-not-ios-8#26595480
     func checkPhotoLibraryPermission() {
-        checkPermissionCounter += 1
-        print("Begin checkPhotoLibraryPermission run \(checkPermissionCounter)")
-        
         switch photoAccessStatus {
         case .authorized:
             print("Access previously authorized.")
@@ -109,10 +90,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("Completed checkPhotoLibraryPermission authorization request.")
             }
         }
-
-        print("Ended checkPhotoLibraryPermission run \(checkPermissionCounter)")
     }
     
+    // called on completion of camera view
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         
@@ -122,10 +102,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         UIImageWriteToSavedPhotosAlbum(self.image, self, nil, nil)
+        
         performSegue(withIdentifier: "showFullImageSegue", sender: self)
     }
     
-    // Called anytime we are about to navigate away from current view
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
             if (id == "showFullImageSegue") {
@@ -146,9 +127,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    //////////////////////////////////////////////
-    // UITableViewDataSource REQUIRED FUNCTIONS //
-    //////////////////////////////////////////////
+    // MARK: - UITableViewDataSource Required Functions
     // Returns cell for display using custom MyTableViewCell class
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MyTableViewCell
@@ -176,20 +155,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    ///////////////////////////////////
-    // UITableViewDelegate FUNCTIONS //
-    ///////////////////////////////////
+    // MARK: - UITableViewDelegate Required Function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

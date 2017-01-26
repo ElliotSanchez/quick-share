@@ -249,14 +249,27 @@
                                     <action selector="tapBigInvisibleButton:" destination="Vrg-yl-ZsY" eventType="touchUpInside" id="0Jh-j6-dMI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wd-TX-2aO">
+                                <rect key="frame" x="16" y="20" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="I0C-sl-5Du"/>
+                                    <constraint firstAttribute="width" constant="120" id="Y3P-bJ-GYh"/>
+                                </constraints>
+                                <state key="normal" title=" "/>
+                                <connections>
+                                    <action selector="tapSmallInvisibleButton:" destination="Vrg-yl-ZsY" eventType="touchUpInside" id="R8k-Jo-ecv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bfj-hg-jvk" firstAttribute="top" secondItem="Rl2-5V-0ww" secondAttribute="bottom" id="3tE-Fi-XxK"/>
                             <constraint firstItem="Tod-Kv-lFi" firstAttribute="centerX" secondItem="huG-jv-nHN" secondAttribute="centerX" id="9aq-e8-1BY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bfj-hg-jvk" secondAttribute="trailing" id="D80-Of-tIg"/>
+                            <constraint firstItem="3wd-TX-2aO" firstAttribute="leading" secondItem="huG-jv-nHN" secondAttribute="leadingMargin" id="DkA-NV-735"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Tod-Kv-lFi" secondAttribute="bottom" constant="20" id="ZOJ-gw-t8d"/>
                             <constraint firstItem="bfj-hg-jvk" firstAttribute="leading" secondItem="huG-jv-nHN" secondAttribute="leadingMargin" id="bV5-5y-R4U"/>
+                            <constraint firstItem="3wd-TX-2aO" firstAttribute="top" secondItem="Rl2-5V-0ww" secondAttribute="bottom" id="rRv-gp-55e"/>
                             <constraint firstItem="Tod-Kv-lFi" firstAttribute="top" secondItem="bfj-hg-jvk" secondAttribute="bottom" id="vZV-el-LuN"/>
                             <constraint firstItem="Tod-Kv-lFi" firstAttribute="top" secondItem="huG-jv-nHN" secondAttribute="centerYWithinMargins" id="z2G-NN-BOS"/>
                         </constraints>

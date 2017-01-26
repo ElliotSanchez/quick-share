@@ -10,27 +10,9 @@ import UIKit
 import Photos
 import Social
 
-// modified from example at 
-// http://stackoverflow.com/questions/25759945/pass-data-when-dismiss-modal-viewcontroller-in-swift
-// used to tell the share button on the ShowImageVC to return alpha to normal
-protocol CommunicationControllerSharing {
-    func backFromSharing()
-}
-
 class ShareImageViewController: UIViewController, UIDocumentInteractionControllerDelegate {
     
-    // used to tell the share button on the ShowImageVC to return alpha to normal
-    var delegate: CommunicationControllerSharing? = nil
-    
-    
-    @IBAction func tapBigInvisibleButton(_ sender: Any) {
-        self.dismiss(animated: true) {
-        
-            // show share button again when sharing options view is hidden
-            print("tapped BigInvisible Button")
-            
-        }
-    }
+    // MARK: - Variables and Outlets
     
     // Document controller is class level variable needed for instagram sharing code below
     var docController: UIDocumentInteractionController?
@@ -38,17 +20,25 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     // image is for single images passed from Preview viewController
     var myImage: UIImage?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.delegate?.backFromSharing()
+    // kludgy workaround to dismiss view when user taps in empty space on screen
+    // clear button that autosizes to screen that isn't covered by sharing service stack of buttons
+    @IBAction func tapBigInvisibleButton(_ sender: Any) {
+        print("tapBigInvisibleButton")
+        self.dismiss(animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-    
+    // kludgy workaround to return to camera roll view when user attempts to tap back arrow
+    // clear button that takes up top 120x120 pixels, same size as back arrow plus padding
+    // this elegant solution without delegates or protocols adapted from 
+    // http://stackoverflow.com/questions/14907518/modal-view-controllers-how-to-display-and-dismiss/29671682#29671682
+    @IBAction func tapSmallInvisibleButton(_ sender: Any) {
+        print("tapSmallInvisibleButton")
+        let camRollVC = storyboard?.instantiateViewController(withIdentifier: "CameraRollVC") as! ViewController
+        let showImageVC = self.presentingViewController
+        self.dismiss(animated: false, completion: { () -> Void   in
+            showImageVC!.present(camRollVC, animated: true, completion: nil)
+        })
     }
-    
-    
-    
     
     // Single outlet for all sharing buttons, differentiated by tags, numbered 1-6
     // Each calls a sharing function below
@@ -60,12 +50,12 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
             }
         case 2:
             shareInstagram()
-        case 3: print("fb messenger")
+        case 3: print("placeholder for fb messenger")
         case 4:
             if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
                 shareFacebookTwitter(vc: vc)
             }
-        case 5: print("pinterest")
+        case 5: print("placeholder for pinterest")
         case 6:
             shareWhatsapp()
         default: print("nothing")
@@ -73,9 +63,8 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
     }
     
     
-    ////////////////////////////////////////
-    // SERVICE SPECIFIC SHARING FUNCTIONS //
-    ////////////////////////////////////////
+    // MARK: - Sharing Service Functions 
+    
     // Facebook and Twitter
     func shareFacebookTwitter (vc: SLComposeViewController) {
         vc.setInitialText("Check out this picture I shared with Quick Share")
@@ -128,23 +117,4 @@ class ShareImageViewController: UIViewController, UIDocumentInteractionControlle
             print("Error finding your image or the Whatsapp application")
         }
     }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
