@@ -67,16 +67,6 @@ class ShowImageViewController: UIViewController, UIDocumentInteractionController
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // unhides sharing button that's hidden when sharing menu is opened
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {

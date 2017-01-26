@@ -119,14 +119,14 @@
 			children = (
 				F43C32D31DC7ABB70072A88E /* images */,
 				F43C32A51DC7A9FA0072A88E /* AppDelegate.swift */,
+				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
 				F43C32A71DC7A9FA0072A88E /* ViewController.swift */,
+				F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */,
+				F4A0B17A1E3669430020006C /* ShareImageViewController.swift */,
 				F43C32A91DC7A9FA0072A88E /* Main.storyboard */,
 				F43C32AC1DC7A9FA0072A88E /* Assets.xcassets */,
 				F43C32AE1DC7A9FA0072A88E /* LaunchScreen.storyboard */,
 				F43C32B11DC7A9FA0072A88E /* Info.plist */,
-				F4111A691DC7BAB9007F1123 /* MyTableViewCell.swift */,
-				F4111A6B1DC7C8C2007F1123 /* ShowImageViewController.swift */,
-				F4A0B17A1E3669430020006C /* ShareImageViewController.swift */,
 			);
 			path = "Quick Share";
 			sourceTree = "<group>";
