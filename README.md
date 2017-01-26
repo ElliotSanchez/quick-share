@@ -13,6 +13,7 @@ My original contributions include:
 * custom UI including most icons and segues
 * simple multi-threading for improved responsiveness
 * decreased memory footprint and cpu usage
+* removed duplication of images for sharing dialog
 * ongoing photos permission checking after initial failure
 * camera roll reload after permission change
 * full screen image preview prior to sharing
